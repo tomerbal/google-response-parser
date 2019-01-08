@@ -1,0 +1,19 @@
+{
+  "name": "google-response-parser",
+  "version": "1.0.0",
+  "description": "Parse Google search results page to JSON",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomerbal/google-response-parser.git"
+  },
+  "author": "Tomer Balan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomerbal/google-response-parser/issues"
+  },
+  "homepage": "https://github.com/tomerbal/google-response-parser#readme"
+}
