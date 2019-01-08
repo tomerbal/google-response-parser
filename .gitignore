@@ -62,3 +62,8 @@ typings/
 # next.js build output
 .next
 
+.idea
+
+.idea/sonarlint/
+
+google-response-parser.iml
