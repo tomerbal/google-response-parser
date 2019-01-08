@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/tomerbal/google-response-parser/issues"
   },
-  "homepage": "https://github.com/tomerbal/google-response-parser#readme"
+  "homepage": "https://github.com/tomerbal/google-response-parser#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "request": "^2.88.0",
+    "requestretry": "^3.1.0"
+  }
 }

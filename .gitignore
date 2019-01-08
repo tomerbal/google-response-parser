@@ -67,3 +67,4 @@ typings/
 .idea/sonarlint/
 
 google-response-parser.iml
+test.js
