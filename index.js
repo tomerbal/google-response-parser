@@ -18,6 +18,7 @@ function parse(response, inputUrl) {
     setDidYouMean($, output.objects[0]);
     setNumberOfResults($, output.objects[0]);
     setRelatedSearches($, output.objects[0]);
+    setPeopleAlsoAsk($, output.objects[0]);
     if (output.objects[0].results) {
         console.log("number of results: " + output.objects[0].results.length);
     }
@@ -42,12 +43,16 @@ function setMusicCarousel($, output) {
 }
 
 function setHasMap($, output) {
-    output.hasMap = false;
-    if ($('a[href*="/maps/"]').length > 0 || $('img[src*="/maps/"]').length > 0) {
-        output.hasMap = true;
-        console.log('hasMap: ' + true);
+    const mapLinks = $('a[data-url*="/maps/"]');
+    output.hasMap = mapLinks.length > 0 || $('img[src*="/maps/"]').length > 0;
+    if (mapLinks.length > 0) {
+        output.mapLinks = [];
+        for (let i = 0; i < mapLinks.length; i++) {
+            output.mapLinks.push(mapLinks[i].attribs["data-url"]);
+        }
     }
 }
+
 
 function setHasCard($, output) {
     var xpdOpen = $(".xpdopen");
@@ -205,6 +210,18 @@ function setNumberOfResults($, output) {
     var numberOfResults = $("#resultStats");
     if (numberOfResults.text().length > 0) {
         output.number = numberOfResults.text();
+    }
+}
+
+function setPeopleAlsoAsk($, output) {
+    var questions = $(".related-question-pair");
+    if (questions.length > 0) {
+        output.peopleAlsoAsk = [];
+        questions.each(function () {
+            const result = {};
+            result.question = $(this).find(".match-mod-horizontal-padding").text();
+            output.peopleAlsoAsk.push(result);
+        });
     }
 }
 
