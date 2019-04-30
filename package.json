@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/tomerbal/google-response-parser#readme",
   "dependencies": {
+    "apify": "^0.13.7",
     "cheerio": "^1.0.0-rc.2",
     "request": "^2.88.0",
-    "requestretry": "^3.1.0"
+    "request-promise": "^4.2.4",
+    "requestretry": "^3.1.0",
+    "valid-url": "^1.0.9"
   }
 }

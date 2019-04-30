@@ -1,4 +1,5 @@
 const cheerio = require('cheerio');
+const validUrl = require('valid-url');
 
 function parse(response, inputUrl) {
     const $ = cheerio.load(response);
@@ -166,7 +167,7 @@ function setAds($, output) {
 }
 
 function setPla($, output) {
-    var results = $('.shopping-carousel-container g-inner-card');
+    var results = $('.pla-unit');
     if (results.length > 0) {
         output.pla = [];
         results.each(function () {
@@ -176,7 +177,7 @@ function setPla($, output) {
                 const links = $(this).find("a");
                 links.each(function () {
                     const link = $(this).attr("href");
-                    if (link !== "javascript:void(0)") {
+                    if (link !== "javascript:void(0)" && validUrl.isUri(link)) {
                         result.links.add(link);
                     }
                 });
@@ -191,6 +192,8 @@ function setPla($, output) {
                         }
                     });
                 }
+                result.title =  $(this).find(".pla-unit-title").text();
+                result.by = $(this).find(".pla-extensions-container").text();
                 output.pla.push(result);
             }
         });
