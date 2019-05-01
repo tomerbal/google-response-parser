@@ -182,8 +182,8 @@ function setAds($, output) {
 
 function setPla($, output) {
     var results = $('.pla-unit');
+    output.pla = [];
     if (results.length > 0) {
-        output.pla = [];
         results.each(function () {
             if ($(this).children().length > 0) {
                 const result = {};
