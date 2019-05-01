@@ -1,6 +1,6 @@
 {
   "name": "google-response-parser",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "Parse Google search results page to JSON",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/tomerbal/google-response-parser#readme",
   "dependencies": {
-    "apify": "^0.13.7",
     "cheerio": "^1.0.0-rc.2",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
