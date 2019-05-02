@@ -191,7 +191,7 @@ function setPla($, output) {
                 const links = $(this).find("a");
                 links.each(function () {
                     const link = $(this).attr("href");
-                    if (link !== "javascript:void(0)" && validUrl.isUri(link)) {
+                    if (link !== "javascript:void(0)" && validUrl.isUri(link) && !link.includes("google.com")) {
                         result.links.add(link);
                     }
                 });

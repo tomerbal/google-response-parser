@@ -1,6 +1,6 @@
 {
   "name": "google-response-parser",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Parse Google search results page to JSON",
   "main": "index.js",
   "scripts": {
