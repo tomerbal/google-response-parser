@@ -98,13 +98,12 @@ function setHasCard($, output) {
 
 function setResults($, output, inputNumberOfResults) {
     var results = $(".g");
-    if (results.length > 0 && results.find(".rc .r h3").length > 0) {
+    if (results.length > 0 && results.find("h3").length > 0) {
         output.results = [];
         results.each(function () {
             const result = {};
-            var r = $(this).find(".rc .r");
-            var a = r.find("a");
-            var h3 = r.find("h3").text();
+            var h3 = $(this).find("a h3").first();
+            var a = h3.parent();
             var title = a.text().length > 0 ? a.text() : h3;
             if (title) {
                 result.title = title;
